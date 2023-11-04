@@ -1,0 +1,310 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="common_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Garbage Collection</title>
+ <script src="SLIDER/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="SLIDER/js/jssor.slider-22.2.10.mini.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            var jssor_1_SlideshowTransitions = [
+              { $Duration: 1200, x: 0.3, $During: { $Left: [0.3, 0.7] }, $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, x: -0.3, $SlideOut: true, $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, x: -0.3, $During: { $Left: [0.3, 0.7] }, $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, x: 0.3, $SlideOut: true, $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, y: 0.3, $During: { $Top: [0.3, 0.7] }, $Easing: { $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, y: -0.3, $SlideOut: true, $Easing: { $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, y: -0.3, $During: { $Top: [0.3, 0.7] }, $Easing: { $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, y: 0.3, $SlideOut: true, $Easing: { $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, x: 0.3, $Cols: 2, $During: { $Left: [0.3, 0.7] }, $ChessMode: { $Column: 3 }, $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, x: 0.3, $Cols: 2, $SlideOut: true, $ChessMode: { $Column: 3 }, $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, y: 0.3, $Rows: 2, $During: { $Top: [0.3, 0.7] }, $ChessMode: { $Row: 12 }, $Easing: { $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, y: 0.3, $Rows: 2, $SlideOut: true, $ChessMode: { $Row: 12 }, $Easing: { $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, y: 0.3, $Cols: 2, $During: { $Top: [0.3, 0.7] }, $ChessMode: { $Column: 12 }, $Easing: { $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, y: -0.3, $Cols: 2, $SlideOut: true, $ChessMode: { $Column: 12 }, $Easing: { $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, x: 0.3, $Rows: 2, $During: { $Left: [0.3, 0.7] }, $ChessMode: { $Row: 3 }, $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, x: -0.3, $Rows: 2, $SlideOut: true, $ChessMode: { $Row: 3 }, $Easing: { $Left: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: { $Left: [0.3, 0.7], $Top: [0.3, 0.7] }, $ChessMode: { $Column: 3, $Row: 12 }, $Easing: { $Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, x: 0.3, y: 0.3, $Cols: 2, $Rows: 2, $During: { $Left: [0.3, 0.7], $Top: [0.3, 0.7] }, $SlideOut: true, $ChessMode: { $Column: 3, $Row: 12 }, $Easing: { $Left: $Jease$.$InCubic, $Top: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, $Delay: 20, $Clip: 3, $Assembly: 260, $Easing: { $Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, $Delay: 20, $Clip: 3, $SlideOut: true, $Assembly: 260, $Easing: { $Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, $Delay: 20, $Clip: 12, $Assembly: 260, $Easing: { $Clip: $Jease$.$InCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 },
+              { $Duration: 1200, $Delay: 20, $Clip: 12, $SlideOut: true, $Assembly: 260, $Easing: { $Clip: $Jease$.$OutCubic, $Opacity: $Jease$.$Linear }, $Opacity: 2 }
+            ];
+
+            var jssor_1_options = {
+                $AutoPlay: true,
+                $SlideshowOptions: {
+                    $Class: $JssorSlideshowRunner$,
+                    $Transitions: jssor_1_SlideshowTransitions,
+                    $TransitionsOrder: 1
+                },
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$
+                },
+                $ThumbnailNavigatorOptions: {
+                    $Class: $JssorThumbnailNavigator$,
+                    $Cols: 10,
+                    $SpacingX: 8,
+                    $SpacingY: 8,
+                    $Align: 360
+                }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*responsive code begin*/
+            /*you can remove responsive code if you don't want the slider scales while window resizing*/
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1200);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            /*responsive code end*/
+        });
+    </script>
+    <style>
+        
+        .jssora05l, .jssora05r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background: url('img/a17.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora05l { background-position: -10px -40px; }
+        .jssora05r { background-position: -70px -40px; }
+        .jssora05l:hover { background-position: -130px -40px; }
+        .jssora05r:hover { background-position: -190px -40px; }
+        .jssora05l.jssora05ldn { background-position: -250px -40px; }
+        .jssora05r.jssora05rdn { background-position: -310px -40px; }
+        .jssora05l.jssora05lds { background-position: -10px -40px; opacity: .3; pointer-events: none; }
+        .jssora05r.jssora05rds { background-position: -70px -40px; opacity: .3; pointer-events: none; }
+        /* jssor slider thumbnail navigator skin 01 css *//*.jssort01 .p            (normal).jssort01 .p:hover      (normal mouseover).jssort01 .p.pav        (active).jssort01 .p.pdn        (mousedown)*/.jssort01 .p {    position: absolute;    top: 0;    left: 0;    width: 72px;    height: 72px;}.jssort01 .t {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;    border: none;}.jssort01 .w {    position: absolute;    top: 0px;    left: 0px;    width: 100%;    height: 100%;}.jssort01 .c {    position: absolute;    top: 0px;    left: 0px;    width: 68px;    height: 68px;    border: #000 2px solid;    box-sizing: content-box;    background: url('img/t01.png') -800px -800px no-repeat;    _background: none;}.jssort01 .pav .c {    top: 2px;    _top: 0px;    left: 2px;    _left: 0px;    width: 68px;    height: 68px;    border: #000 0px solid;    _border: #fff 2px solid;    background-position: 50% 50%;}.jssort01 .p:hover .c {    top: 0px;    left: 0px;    width: 70px;    height: 70px;    border: #fff 1px solid;    background-position: 50% 50%;}.jssort01 .p.pdn .c {    background-position: 50% 50%;    width: 68px;    height: 68px;    border: #000 2px solid;}* html .jssort01 .c, * html .jssort01 .pdn .c, * html .jssort01 .pav .c {    /* ie quirks mode adjust */    width /**/: 72px;    height /**/: 72px;}
+    </style>
+ 
+<!--
+Template 2052 Orange Bond
+http://www.tooplate.com/view/2052-orange-bond
+-->
+<link href="css/tooplate_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+
+<script language="javascript" type="text/javascript">
+    function clearText(field) {
+        if (field.defaultValue == field.value) field.value = '';
+        else if (field.value == '') field.value = field.defaultValue;
+    }
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+
+    /***********************************************
+    * Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * This notice MUST stay intact for legal use
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+    ***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+    ddsmoothmenu.init({
+        mainmenuid: "tooplate_menu", //menu DIV id
+        orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+        classname: 'ddsmoothmenu', //class added to menu's outer DIV
+        //customtheme: ["#1c5a80", "#18374a"],
+        contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+    })
+
+</script>
+  
+</head>
+<body>
+<div id="tooplate_header">
+	<div id="tooplate_top">
+    	<div id="tooplate_search">
+            <form action="#" method="get">
+              <input type="text" value="Search" name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+		</div>
+    </div>
+    <div id="tooplate_titlebar">
+    	<div id="site_title"><h1><a href="#">GARBAGE MANAGEMENT</a></h1></div>
+        <div id="tooplate_menu" class="ddsmoothmenu">
+            <ul>
+              <li><a href="home.aspx" class="selected">Home</a></li>
+          		<li><a href="about.aspx">About</a>
+                    <ul>
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Waste Management</a></li>
+                        <li><a href="#">recycling</a></li>
+                  </ul>
+              </li>
+         	  <li><a href="project.aspx">Project</a>
+                    <ul>
+                        <li><a href="#">Garbage Collection</a></li>
+                        <li><a href="#">swachh bharat</a></li>
+                        <li><a href="#">Clean of India</a></li>
+                        <li><a href="#">Process</a></li>
+                        <li><a href="#">Planning</a></li>
+                  </ul>
+              </li>
+              <li><a href="login.aspx">Login</a></li>
+              <li><a href="contact.aspx">Contact</a></li>
+                <li><a href="garbageorder.aspx">Book online</a></li>
+                 <li><a href="registergarbage.aspx">REG_BUSINESS</a></li>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of tooplate_menu -->
+    </div>
+    
+    <div id="tooplate_mid_wrapper">
+    	<div id="tooplate_mid_home">
+        	   <div id="jssor_1" 
+                   
+                   style="position:relative;margin:0 auto;top:-38px; left:0px;width:900px; height:345px; overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('SLIDER/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:900px;height:345px;overflow:hidden;">
+         <div>
+                <img data-u="image" src="SLIDER/img/12.png" />
+               
+            </div>
+            <div>
+                <img data-u="image" src="SLIDER/img/1.png" />
+               
+            </div>
+            <div>
+                <img data-u="image" src="SLIDER/img/2.jpg" />
+             
+            </div>
+            <div>
+                <img data-u="image" src="SLIDER/img/3.jpg" />
+               
+            </div>
+            <a data-u="any" href="http://www.jssor.com" style="display:none">Image Gallery</a>
+            <div>
+                <img data-u="image" src="SLIDER/img/4.png" />
+               
+            </div>
+            <div>
+                <img data-u="image" src="SLIDER/img/5.jpg" />
+                 
+            </div>
+            <div>
+                <img data-u="image" src="SLIDER/img/6.jpg" />
+                 
+            </div>
+            <div>
+                <img data-u="image" src="SLIDER/img/7.jpg" />
+                 
+            </div>
+            <div>
+                <img data-u="image" src="SLIDER/img/8.png" />
+                
+            </div>
+            <div>
+                <img data-u="image" src="SLIDER/img/10.jpg" />
+             
+            </div>
+            <div>
+                <img data-u="image" src="SLIDER/img/11.jpg" />
+              
+            </div>
+              <div>
+                <img data-u="image" src="SLIDER/img/12.png" />
+               
+            </div>
+             
+        </div>
+            <div class="cleaner"></div>
+        	
+        </div>
+    </div>
+</div>  
+
+<div>
+ <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</div>
+
+<div id="tooplate_footer_wrapper">
+	<div id="tooplate_footer">
+    	<div class="col_4">
+        	<h5>Project  Links</h5>
+            <ul class="footer_list">
+            	<li><a href="#">Plastic Management</a></li>
+                <li><a href="#">Recycling of Waste</a></li>
+                <li><a href="#">Smart Management </a></li>
+                <li><a href="#">Reusability</a></li>
+                <li><a href="#m">Controll Pollution</a></li>
+			</ul>
+        </div>
+        <div class="col_4">
+        	<h5>Recent Posts</h5>
+            <ul class="footer_list">
+            	<li><a href="#">Swachh Bharat Urban
+Ministry of Urban Development, Government of India</a></li>
+                <li><a href="#">Now, become 'Swachhagrahis' with MoUD's Swachhata app</a></li>
+                <li><a href="#">RMC to ramps up sanitation services for cleanliness survey</a></li>
+			</ul>                
+        </div>
+        <div class="col_4">
+        	<h5>Twitter</h5>
+            <ul class="twitter_post">
+	            <li>Pradeep Maheshwari on Twitter: "My views about garbage .. <a href="https://www.letsdoitworld.org">https://www.letsdoitworld.org/</a></li>
+               <li>Swachh Bharat on Twitter  The Swachh Bharat Abhiyan is a massive movement that seeks to create a Clean India. <a href="http://www.swachhbharaturban.in">www.swachhbharaturban.in/</a></li>
+			</ul>
+        </div>
+        <div class="col_4 col_l">
+        	<h5>About</h5>
+            <p>Garbage management is collection, transportation, and disposal of garbage, sewage and other waste products. It is about how garbage can be used as a valuable resource.</p>
+            <div class="footer_social_button">
+                <a href="http://www.fb.com"><img alt="Facebook" src="images/facebook-32x32.png" title="facebook" /></a>
+                <a href="http://www.google.com"><img alt="Flickr" src="images/flickr-32x32.png" title="flickr" /></a>
+                <a href="https://twitter.com/login"><img alt="Twitter" src="images/twitter-32x32.png" title="twitter" /></a>
+                <a href="https://www.youtube.com"><img alt="Youtube" src="images/youtube-32x32.png" title="youtube" /></a>
+                <a href="http://www.google.com"><img alt="RSS" src="images/rss-32x32.png" title="rss" /></a>
+			</div>
+		</div>
+        <div class="cleaner"></div>
+    </div>
+</div>
+
+<div id="tooplate_cr_bar_wrapper">
+	<div id="tooplate_cr_bar" style="color: #00FF00; font-size: large">
+	Copyright © 2022 <a href="#" style="color: #FFFFFF; font-size: large">ACE-EE Developed By:LOKESH ROUL</a>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
+ 
