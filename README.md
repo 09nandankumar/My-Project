@@ -14,7 +14,9 @@ I finalized to make this project and hence planned to develop this system.
 
 
 Operating System : Windows 10
+
 Front- End : C#. NET with ASP. NET
+
 Back- End : MS SQL SERVER-2008
 
 Project will be done in ASP.NET with c#.NET 4.5 as front end and MS SQL SERVER as back end. Microsoft .NET is software that connects information, people, systems and devices. It spans clients, servers and developer tools and consists of:
